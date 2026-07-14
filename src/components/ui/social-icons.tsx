@@ -2,7 +2,6 @@ import type { SVGProps } from 'react';
 
 type IconProps = SVGProps<SVGSVGElement>;
 
-// Bộ icon mạng xã hội tối giản, tự vẽ (không phụ thuộc thư viện brand-icon).
 export function FacebookIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
@@ -13,16 +12,17 @@ export function FacebookIcon(props: IconProps) {
 
 export function ZaloIcon(props: IconProps) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
+      <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" strokeWidth="1.8" />
+
       <text
-        x="12"
-        y="15.5"
+        x="16"
+        y="20"
         textAnchor="middle"
-        fontSize="8.5"
+        fontSize="11"
         fontWeight="700"
         fill="currentColor"
-        fontFamily="sans-serif"
+        fontFamily="Arial, sans-serif"
       >
         Zalo
       </text>
@@ -34,14 +34,6 @@ export function MessengerIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
       <path d="M12 2C6.5 2 2 6.1 2 11.3c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.2 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2Zm1 12.4-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 5-2.7-5.5 5.8Z" />
-    </svg>
-  );
-}
-
-export function TikTokIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <path d="M16.6 2h-3.1v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.5a5.9 5.9 0 0 0-.9-.1A6 6 0 1 0 16.6 15V8.3a8 8 0 0 0 4.4 1.3V6.5a4.9 4.9 0 0 1-4.4-4.5Z" />
     </svg>
   );
 }

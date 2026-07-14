@@ -1,7 +1,9 @@
+'use client';
+
 import { Clock, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 
-import { FacebookIcon, MessengerIcon, TikTokIcon, ZaloIcon } from '@/components/ui/social-icons';
+import { FacebookIcon, MessengerIcon, ZaloIcon } from '@/components/ui/social-icons';
 import {
   ADDRESS,
   FACEBOOK_URL,
@@ -9,22 +11,22 @@ import {
   PHONE_DISPLAY,
   PHONE_TEL,
   SITE_NAME,
-  SITE_TAGLINE,
-  TIKTOK_URL,
   WORKING_HOURS,
   ZALO_URL,
 } from '@/config/constants';
+import { useI18n } from '@/context/I18nContext';
 
 const SOCIAL_LINKS = [
   { href: FACEBOOK_URL, label: 'Facebook', Icon: FacebookIcon },
   { href: ZALO_URL, label: 'Zalo', Icon: ZaloIcon },
   { href: MESSENGER_URL, label: 'Messenger', Icon: MessengerIcon },
-  { href: TIKTOK_URL, label: 'TikTok', Icon: TikTokIcon },
 ];
 
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`;
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer id="lien-he" className="bg-olive text-cream">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
@@ -36,14 +38,14 @@ export default function Footer() {
                 alt={SITE_NAME}
                 fill
                 sizes="44px"
-                className="scale-[1.9] object-cover object-[50%_28%]"
+                className="object-cover"
               />
             </span>
             <span className="font-serif text-lg font-semibold tracking-wide">
               {SITE_NAME.toUpperCase()}
             </span>
           </div>
-          <p className="text-cream/70 mt-4 text-sm">{SITE_TAGLINE}</p>
+          <p className="text-cream/70 mt-4 text-sm">{t('hero.eyebrow')}</p>
           <div className="mt-5 flex gap-3">
             {SOCIAL_LINKS.map(({ href, label, Icon }) => (
               <a
@@ -59,7 +61,9 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold tracking-widest uppercase">Thông tin liên hệ</h3>
+          <h3 className="text-sm font-semibold tracking-widest uppercase">
+            {t('footer.contactInfoTitle')}
+          </h3>
           <ul className="text-cream/80 mt-4 space-y-3 text-sm">
             <li className="flex gap-2">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
@@ -68,20 +72,22 @@ export default function Footer() {
             <li className="flex gap-2">
               <Phone className="mt-0.5 h-4 w-4 shrink-0" />
               <a href={PHONE_TEL} className="hover:text-cream">
-                Zalo / Gọi ngay: {PHONE_DISPLAY}
+                {t('footer.bookingLabel')}: {PHONE_DISPLAY}
               </a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold tracking-widest uppercase">Giờ hoạt động</h3>
+          <h3 className="text-sm font-semibold tracking-widest uppercase">
+            {t('footer.workingHoursTitle')}
+          </h3>
           <ul className="text-cream/80 mt-4 space-y-3 text-sm">
-            {WORKING_HOURS.map(({ days, hours }) => (
-              <li key={days} className="flex items-start gap-2">
+            {WORKING_HOURS.map(({ id, hours }) => (
+              <li key={id} className="flex items-start gap-2">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>
-                  {days}: {hours}
+                  {t(`footer.workingHours.${id}.days`)}: {hours}
                 </span>
               </li>
             ))}
@@ -89,7 +95,9 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold tracking-widest uppercase">Bản đồ</h3>
+          <h3 className="text-sm font-semibold tracking-widest uppercase">
+            {t('footer.mapTitle')}
+          </h3>
           <div className="border-cream/20 mt-4 h-40 overflow-hidden rounded-lg border">
             <iframe
               title="Bản đồ Den Spa"
@@ -104,7 +112,7 @@ export default function Footer() {
 
       <div className="border-cream/10 border-t py-5">
         <p className="text-cream/60 text-center text-xs">
-          © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+          © {new Date().getFullYear()} {SITE_NAME}. {t('footer.rights')}
         </p>
       </div>
     </footer>
