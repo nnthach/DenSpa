@@ -2,21 +2,27 @@ import { cn } from '@/lib/utils';
 
 import type { ButtonHTMLAttributes } from 'react';
 
+export type ButtonVariant = 'primary' | 'secondary' | 'outline';
+
+const BASE_CLASSES =
+  'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 cursor-pointer';
+
+const VARIANT_CLASSES: Record<ButtonVariant, string> = {
+  primary: 'bg-brown text-cream hover:bg-brown/90',
+  secondary: 'bg-olive text-cream hover:bg-olive/90',
+  outline: 'border border-brown text-brown hover:bg-brown hover:text-cream',
+};
+
+/** Class helper — dùng chung cho <button> và <a>/<Link> để giữ style CTA đồng nhất. */
+export function buttonVariants(variant: ButtonVariant = 'primary', className?: string) {
+  return cn(BASE_CLASSES, VARIANT_CLASSES[variant], className);
+}
+
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary';
+  variant?: ButtonVariant;
 };
 
 // Primitive "dumb": chỉ nhận props, không fetch data, không chứa business logic.
 export function Button({ className, variant = 'primary', ...props }: ButtonProps) {
-  return (
-    <button
-      className={cn(
-        'inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50',
-        variant === 'primary' && 'bg-gray-900 text-white hover:bg-gray-700',
-        variant === 'secondary' && 'border border-gray-300 text-gray-900 hover:bg-gray-100',
-        className,
-      )}
-      {...props}
-    />
-  );
+  return <button className={buttonVariants(variant, className)} {...props} />;
 }
