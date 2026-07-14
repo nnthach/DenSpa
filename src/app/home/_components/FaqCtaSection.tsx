@@ -6,23 +6,32 @@ import { buttonVariants } from '@/components/ui/button';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { PHONE_DISPLAY, PHONE_TEL, ZALO_URL } from '@/config/constants';
 import { useI18n } from '@/context/I18nContext';
+import { useInView } from '@/hooks/useInView';
+import { cn } from '@/lib/utils';
 
 import { FaqAccordion } from './FaqAccordion';
 
 export function FaqCtaSection() {
   const { t } = useI18n();
+  const { ref, inView } = useInView<HTMLElement>();
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <section ref={ref} className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="grid gap-10 lg:grid-cols-2 lg:items-stretch">
-        <div>
+        <div className={cn(inView ? 'animate-fadeInLeft' : 'opacity-0')}>
           <SectionHeading title={t('faqCta.faqTitle')} align="left" />
           <div className="mt-6">
             <FaqAccordion />
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-3xl">
+        <div
+          className={cn(
+            'relative overflow-hidden rounded-3xl',
+            inView ? 'animate-fadeInRight' : 'opacity-0',
+          )}
+          style={{ animationDelay: '150ms' }}
+        >
           <Image
             src="/images/banner.webp"
             alt=""
@@ -30,6 +39,9 @@ export function FaqCtaSection() {
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"
           />
+          {inView ? (
+            <div className="animate-circuitFlow via-cream/25 pointer-events-none absolute top-0 h-full w-1/4 -skew-x-12 bg-gradient-to-r from-transparent to-transparent" />
+          ) : null}
           <div className="bg-brown/85 relative flex h-full flex-col justify-center gap-5 p-8 sm:p-10">
             <h3 className="text-cream font-serif text-2xl font-semibold sm:text-3xl">
               {t('faqCta.ctaTitle')}

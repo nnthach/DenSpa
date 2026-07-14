@@ -4,7 +4,7 @@ import { Menu, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import { Button, buttonVariants } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetClose,
@@ -13,7 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { NAV_LINKS, PHONE_DISPLAY, PHONE_TEL, SITE_NAME } from '@/config/constants';
+import { NAV_LINKS, PHONE_DISPLAY, SITE_NAME } from '@/config/constants';
 import { useI18n } from '@/context/I18nContext';
 import { cn } from '@/lib/utils';
 
@@ -87,7 +87,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <LanguageToggle isScrolled={isScrolled} />
           <Button size={'sm'}>
             <Phone className="h-4 w-4" />
@@ -95,13 +95,14 @@ export default function Header() {
           </Button>
         </div>
 
-        <div className="lg:hidden">
+        <div className="flex items-center lg:hidden">
+          <LanguageToggle isScrolled />
+
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger
               aria-label={t('header.openMenu')}
               className={cn(
-                'flex h-11 w-11 items-center justify-center rounded-lg transition-colors',
-                isScrolled ? 'text-brown hover:bg-brown/10' : 'text-white hover:bg-white/10',
+                'text-brown hover:bg-brown/10 flex h-11 w-11 items-center justify-center rounded-lg transition-colors',
               )}
             >
               <Menu className="h-6 w-6" />
@@ -130,22 +131,10 @@ export default function Header() {
               </nav>
 
               <div className="mt-auto flex flex-col gap-4 px-4 pb-6">
-                <LanguageToggle isScrolled />
-
-                <a
-                  href={PHONE_TEL}
-                  className="text-brown flex items-center gap-2 text-sm font-medium"
-                >
+                <Button>
                   <Phone className="h-4 w-4" />
                   {PHONE_DISPLAY}
-                </a>
-
-                <SheetClose
-                  nativeButton={false}
-                  render={<a href="#lien-he" className={buttonVariants({ className: 'w-full' })} />}
-                >
-                  {t('common.bookNow')}
-                </SheetClose>
+                </Button>
               </div>
             </SheetContent>
           </Sheet>

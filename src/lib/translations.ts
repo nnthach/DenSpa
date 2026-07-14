@@ -17,7 +17,7 @@ export const translations = {
       home: 'Trang chủ',
       services: 'Dịch vụ',
       pricing: 'Bảng giá',
-      reviews: 'Review',
+      reviews: 'Đánh giá',
       about: 'Về chúng tôi',
       contact: 'Liên hệ',
     },
@@ -31,7 +31,7 @@ export const translations = {
       },
     },
     problems: {
-      title: 'Bạn có đang...',
+      title: 'Bạn có đang',
       items: {
         neckPain: {
           title: 'Đau cổ vai gáy',
@@ -219,7 +219,7 @@ export const translations = {
       },
     },
     problems: {
-      title: 'Are you experiencing...',
+      title: 'Are you experiencing',
       items: {
         neckPain: {
           title: 'Neck & shoulder pain',

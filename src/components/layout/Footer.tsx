@@ -3,7 +3,7 @@
 import { Clock, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 
-import { FacebookIcon, MessengerIcon, TikTokIcon, ZaloIcon } from '@/components/ui/social-icons';
+import { FacebookIcon, MessengerIcon, ZaloIcon } from '@/components/ui/social-icons';
 import {
   ADDRESS,
   FACEBOOK_URL,
@@ -11,7 +11,6 @@ import {
   PHONE_DISPLAY,
   PHONE_TEL,
   SITE_NAME,
-  TIKTOK_URL,
   WORKING_HOURS,
   ZALO_URL,
 } from '@/config/constants';
@@ -21,7 +20,6 @@ const SOCIAL_LINKS = [
   { href: FACEBOOK_URL, label: 'Facebook', Icon: FacebookIcon },
   { href: ZALO_URL, label: 'Zalo', Icon: ZaloIcon },
   { href: MESSENGER_URL, label: 'Messenger', Icon: MessengerIcon },
-  { href: TIKTOK_URL, label: 'TikTok', Icon: TikTokIcon },
 ];
 
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`;
