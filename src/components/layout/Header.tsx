@@ -14,9 +14,13 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { NAV_LINKS, PHONE_DISPLAY, PHONE_TEL, SITE_NAME } from '@/config/constants';
+import { useI18n } from '@/context/I18nContext';
 import { cn } from '@/lib/utils';
 
+import LanguageToggle from '../ui/language-toggle';
+
 export default function Header() {
+  const { t } = useI18n();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -63,7 +67,7 @@ export default function Header() {
                 'text-olive block text-[10px] font-medium tracking-[0.2em] uppercase transition-colors',
               )}
             >
-              Relax &amp; Beauty
+              {t('header.tagline')}
             </span>
           </span>
         </a>
@@ -71,30 +75,30 @@ export default function Header() {
         <nav className="hidden items-center gap-7 lg:flex">
           {NAV_LINKS.map((link) => (
             <a
-              key={link.label}
+              key={link.id}
               href={link.href}
               className={cn(
                 'text-xs font-semibold tracking-widest uppercase transition-colors',
                 isScrolled ? 'text-brown/80 hover:text-brown' : 'text-black/90 hover:text-black',
               )}
             >
-              {link.label}
+              {t(`nav.${link.id}`)}
             </a>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button size={'sm'} variant="cream">
+          <LanguageToggle isScrolled={isScrolled} />
+          <Button size={'sm'}>
             <Phone className="h-4 w-4" />
             {PHONE_DISPLAY}
           </Button>
-          <Button size={'sm'}>Đặt lịch ngay</Button>
         </div>
 
         <div className="lg:hidden">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger
-              aria-label="Mở menu"
+              aria-label={t('header.openMenu')}
               className={cn(
                 'flex h-11 w-11 items-center justify-center rounded-lg transition-colors',
                 isScrolled ? 'text-brown hover:bg-brown/10' : 'text-white hover:bg-white/10',
@@ -111,7 +115,7 @@ export default function Header() {
               <nav className="flex flex-col gap-1 px-4">
                 {NAV_LINKS.map((link) => (
                   <SheetClose
-                    key={link.label}
+                    key={link.id}
                     nativeButton={false}
                     render={
                       <a
@@ -120,12 +124,14 @@ export default function Header() {
                       />
                     }
                   >
-                    {link.label}
+                    {t(`nav.${link.id}`)}
                   </SheetClose>
                 ))}
               </nav>
 
               <div className="mt-auto flex flex-col gap-4 px-4 pb-6">
+                <LanguageToggle isScrolled />
+
                 <a
                   href={PHONE_TEL}
                   className="text-brown flex items-center gap-2 text-sm font-medium"
@@ -138,7 +144,7 @@ export default function Header() {
                   nativeButton={false}
                   render={<a href="#lien-he" className={buttonVariants({ className: 'w-full' })} />}
                 >
-                  Đặt lịch ngay
+                  {t('common.bookNow')}
                 </SheetClose>
               </div>
             </SheetContent>

@@ -3,44 +3,16 @@
 import { Star } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-const TESTIMONIALS = [
-  {
-    name: 'Ngọc Anh',
-    role: 'Nhân viên văn phòng',
-    quote:
-      'Dịch vụ rất tuyệt! Mình bị đau cổ vai gáy lâu năm, sau vài buổi trị liệu cảm thấy dễ chịu hơn rất nhiều. Không gian yên tĩnh, nhân viên nhiệt tình, chuyên nghiệp.',
-  },
-  {
-    name: 'Thu Trang',
-    role: 'Chủ shop online',
-    quote:
-      'Không gian riêng tư, chỉ một khách một lần nên rất thoải mái. Kỹ thuật viên tay nghề tốt, mình đã giới thiệu cho cả nhóm bạn.',
-  },
-  {
-    name: 'Minh Khuê',
-    role: 'Freelancer',
-    quote:
-      'Gót chân mình khô nứt lâu ngày, sau khi chăm sóc tại Den Spa da mềm mịn hẳn. Sẽ quay lại thường xuyên.',
-  },
-  {
-    name: 'Hải Yến',
-    role: 'Giáo viên',
-    quote:
-      'Liệu trình bài bản, nhân viên tư vấn kỹ trước khi làm. Mình cảm nhận rõ sự khác biệt chỉ sau một buổi.',
-  },
-  {
-    name: 'Phương Linh',
-    role: 'Kế toán',
-    quote:
-      'Mình hay bị stress vì công việc, sau mỗi lần đến Den Spa đều thấy nhẹ nhõm và ngủ ngon hơn hẳn.',
-  },
-  {
-    name: 'Đức Anh',
-    role: 'Kỹ sư phần mềm',
-    quote:
-      'Ngồi máy tính cả ngày nên vai gáy lúc nào cũng cứng đờ, trị liệu ở đây giúp mình dễ chịu thấy rõ.',
-  },
-];
+import { useI18n } from '@/context/I18nContext';
+
+const TESTIMONIAL_IDS = [
+  'ngocAnh',
+  'thuTrang',
+  'minhKhue',
+  'haiYen',
+  'phuongLinh',
+  'ducAnh',
+] as const;
 
 const AUTOPLAY_INTERVAL_MS = 4000;
 
@@ -52,11 +24,12 @@ function getVisibleCount(width: number) {
 
 // Client leaf: carousel review tự trượt — track dịch chuyển bằng transform, card giữa được phóng to.
 export function TestimonialCarousel() {
+  const { t } = useI18n();
   const [visibleCount, setVisibleCount] = useState(3);
   const [activeIndex, setActiveIndex] = useState(0);
   const isHoveringRef = useRef(false);
 
-  const maxIndex = Math.max(0, TESTIMONIALS.length - visibleCount);
+  const maxIndex = Math.max(0, TESTIMONIAL_IDS.length - visibleCount);
   const centerSlot = Math.floor((visibleCount - 1) / 2);
   const stepPercent = 100 / visibleCount;
 
@@ -68,7 +41,7 @@ export function TestimonialCarousel() {
   }, []);
 
   useEffect(() => {
-    setActiveIndex((prev) => Math.min(prev, Math.max(0, TESTIMONIALS.length - visibleCount)));
+    setActiveIndex((prev) => Math.min(prev, Math.max(0, TESTIMONIAL_IDS.length - visibleCount)));
   }, [visibleCount]);
 
   useEffect(() => {
@@ -93,15 +66,12 @@ export function TestimonialCarousel() {
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${activeIndex * stepPercent}%)` }}
         >
-          {TESTIMONIALS.map((testimonial, index) => {
+          {TESTIMONIAL_IDS.map((id, index) => {
+            const name = t(`showcase.testimonials.${id}.name`);
             const isActive = index === activeIndex + centerSlot;
 
             return (
-              <div
-                key={testimonial.name}
-                className="shrink-0 px-3"
-                style={{ width: `${stepPercent}%` }}
-              >
+              <div key={id} className="shrink-0 px-3" style={{ width: `${stepPercent}%` }}>
                 <div
                   className={`bg-cream h-full rounded-2xl p-6 transition-all duration-500 ${
                     isActive ? 'scale-105 opacity-100 shadow-lg' : 'scale-95 opacity-60'
@@ -115,16 +85,18 @@ export function TestimonialCarousel() {
 
                   <div className="mt-4 flex items-center gap-3">
                     <span className="bg-olive/15 text-olive flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-semibold">
-                      {testimonial.name.charAt(0)}
+                      {name.charAt(0)}
                     </span>
                     <div>
-                      <p className="text-brown text-sm font-semibold">{testimonial.name}</p>
-                      <p className="text-brown/50 text-xs">{testimonial.role}</p>
+                      <p className="text-brown text-sm font-semibold">{name}</p>
+                      <p className="text-brown/50 text-xs">
+                        {t(`showcase.testimonials.${id}.role`)}
+                      </p>
                     </div>
                   </div>
 
                   <p className="text-brown/70 mt-4 text-sm leading-relaxed">
-                    “{testimonial.quote}”
+                    “{t(`showcase.testimonials.${id}.quote`)}”
                   </p>
                 </div>
               </div>

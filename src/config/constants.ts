@@ -11,15 +11,15 @@ export const TIKTOK_URL = '#';
 
 export const ADDRESS = 'Hồng An Apartment, Huỳnh Lâm, Ngũ Hành Sơn, Đà Nẵng';
 export const WORKING_HOURS = [
-  { days: 'Thứ 2 – Thứ 7', hours: '09:00 – 22:00' },
-  { days: 'Chủ nhật', hours: '08:30 – 20:00' },
+  { id: 'weekday', hours: '09:00 – 22:00' },
+  { id: 'sunday', hours: '08:30 – 20:00' },
 ] as const;
 
 export const NAV_LINKS = [
-  { label: 'Trang chủ', href: '#trang-chu' },
-  { label: 'Dịch vụ', href: '#dich-vu' },
-  { label: 'Bảng giá', href: '#dich-vu' },
-  { label: 'Review', href: '#review' },
-  { label: 'Về chúng tôi', href: '#ve-chung-toi' },
-  { label: 'Liên hệ', href: '#lien-he' },
+  { id: 'home', href: '#trang-chu' },
+  { id: 'services', href: '#dich-vu' },
+  { id: 'pricing', href: '#dich-vu' },
+  { id: 'reviews', href: '#review' },
+  { id: 'about', href: '#ve-chung-toi' },
+  { id: 'contact', href: '#lien-he' },
 ] as const;

@@ -2,6 +2,7 @@ import './globals.css';
 
 import { Geist } from 'next/font/google';
 
+import { I18nProvider } from '@/context/I18nContext';
 import { cn } from '@/lib/utils';
 
 import { beVietnamPro, playfair } from './fonts';
@@ -29,7 +30,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         geist.variable,
       )}
     >
-      <body className="bg-light-cream text-brown font-sans antialiased">{children}</body>
+      <body className="bg-light-cream text-brown font-sans antialiased">
+        <I18nProvider>{children}</I18nProvider>
+      </body>
     </html>
   );
 }
