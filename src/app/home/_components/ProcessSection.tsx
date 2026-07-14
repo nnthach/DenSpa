@@ -22,16 +22,14 @@ export function ProcessSection() {
 
           {STEPS.map(({ Icon, title, desc }, index) => (
             <div key={title} className="relative z-10 flex flex-col items-center text-center">
-              <span className="bg-cream border-brown text-brown flex h-12 w-12 items-center justify-center rounded-full border-2">
-                <Icon className="h-5 w-5" strokeWidth={1.5} />
+              <span className="bg-cream border-brown text-brown flex h-16 w-16 items-center justify-center rounded-full border-1">
+                <Icon className="text-olive h-8 w-8" strokeWidth={2} />
               </span>
-              <span className="text-olive mt-2 text-[11px] font-semibold">
+              <span className="text-olive mt-2 text-[12px] font-semibold">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3 className="text-brown mt-1 text-xs font-semibold tracking-wide uppercase">
-                {title}
-              </h3>
-              <p className="text-brown/60 mt-1 text-xs leading-relaxed">{desc}</p>
+              <h3 className="text-olive mt-1 text-sm font-bold tracking-wide uppercase">{title}</h3>
+              <p className="text-olive/60 mt-1 text-xs leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>

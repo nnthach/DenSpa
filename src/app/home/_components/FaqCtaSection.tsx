@@ -33,7 +33,7 @@ export function FaqCtaSection() {
               Đặt lịch ngay hôm nay để cơ thể được chăm sóc và tâm trí được thư giãn.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href={ZALO_URL} className={buttonVariants('secondary')}>
+              <a href={ZALO_URL} className={buttonVariants({ variant: 'secondary' })}>
                 Đặt lịch qua Zalo
               </a>
               <a

@@ -1,14 +1,15 @@
 import './globals.css';
 
+import { Geist } from 'next/font/google';
 
-import { FloatingContact } from '@/components/layout/FloatingContact';
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
+import { cn } from '@/lib/utils';
 
 import { beVietnamPro, playfair } from './fonts';
 
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: 'Den Spa – Thư giãn, chăm sóc, phục hồi',
@@ -18,13 +19,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="vi" className={`${playfair.variable} ${beVietnamPro.variable} scroll-smooth`}>
-      <body className="bg-cream text-brown font-sans antialiased">
-        <Header />
-        {children}
-        <Footer />
-        <FloatingContact />
-      </body>
+    <html
+      lang="vi"
+      className={cn(
+        'scroll-smooth',
+        playfair.variable,
+        beVietnamPro.variable,
+        'font-sans',
+        geist.variable,
+      )}
+    >
+      <body className="bg-light-cream text-brown font-sans antialiased">{children}</body>
     </html>
   );
 }

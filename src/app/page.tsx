@@ -5,17 +5,25 @@ import { ProblemsSection } from '@/app/home/_components/ProblemsSection';
 import { ProcessSection } from '@/app/home/_components/ProcessSection';
 import { ServicesSection } from '@/app/home/_components/ServicesSection';
 import { ShowcaseSection } from '@/app/home/_components/ShowcaseSection';
+import { FloatingContact } from '@/components/layout/FloatingContact';
+import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
 
 export default function HomePage() {
   return (
-    <main>
-      <HeroSection />
-      <ProblemsSection />
-      <DifferentiatorsSection />
-      <ServicesSection />
-      <ProcessSection />
-      <ShowcaseSection />
-      <FaqCtaSection />
-    </main>
+    <div>
+      <Header />
+      <main>
+        <HeroSection />
+        <ProblemsSection />
+        <DifferentiatorsSection />
+        <ServicesSection />
+        <ProcessSection />
+        <ShowcaseSection />
+        <FaqCtaSection />
+      </main>
+      <Footer />
+      <FloatingContact />
+    </div>
   );
 }
