@@ -12,15 +12,13 @@ export function FacebookIcon(props: IconProps) {
 
 export function ZaloIcon(props: IconProps) {
   return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
-      <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" strokeWidth="1.8" />
-
+    <svg viewBox="0 0 48 24" fill="none" aria-hidden="true" {...props}>
       <text
-        x="16"
-        y="20"
+        x="24"
+        y="17"
         textAnchor="middle"
-        fontSize="11"
-        fontWeight="700"
+        fontSize="16"
+        fontWeight="600"
         fill="currentColor"
         fontFamily="Arial, sans-serif"
       >

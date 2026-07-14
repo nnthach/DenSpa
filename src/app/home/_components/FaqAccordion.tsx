@@ -5,26 +5,27 @@ import { useState } from 'react';
 
 import { useI18n } from '@/context/I18nContext';
 
-const FAQ_INDICES = [0, 1, 2, 3] as const;
+import { FAQ_DATA } from './faq-data';
 
 // Client leaf: chỉ phần accordion cần state mở/đóng câu hỏi.
 export function FaqAccordion() {
-  const { t } = useI18n();
+  const { locale } = useI18n();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const items = FAQ_DATA[locale];
 
   return (
     <div className="divide-olive/15 divide-y">
-      {FAQ_INDICES.map((index) => {
+      {items.map((item, index) => {
         const isOpen = openIndex === index;
         return (
-          <div key={index}>
+          <div key={item.question}>
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : index)}
               aria-expanded={isOpen}
               className="text-brown flex w-full cursor-pointer items-center justify-between gap-4 py-4 text-left text-sm font-medium"
             >
-              {t(`faq.${index}.question`)}
+              {item.question}
               <ChevronDown
                 className={`h-4 w-4 shrink-0 transition-transform duration-200 ${
                   isOpen ? 'rotate-180' : ''
@@ -32,9 +33,7 @@ export function FaqAccordion() {
               />
             </button>
             {isOpen ? (
-              <p className="text-brown/60 pb-4 text-sm leading-relaxed">
-                {t(`faq.${index}.answer`)}
-              </p>
+              <p className="text-brown/60 pb-4 text-sm leading-relaxed">{item.answer}</p>
             ) : null}
           </div>
         );

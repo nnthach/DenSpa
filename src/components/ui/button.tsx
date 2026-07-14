@@ -11,6 +11,8 @@ const buttonVariants = cva(
         default: 'bg-brown text-cream hover:bg-brown/90',
         secondary: 'bg-olive text-cream hover:bg-olive/90',
         cream: 'bg-cream text-brown border-brown/15 hover:bg-cream/80 border border-brown',
+        lightCream:
+          'bg-light-cream text-brown border-brown/15 hover:bg-light-cream/80 border border-brown',
         olive: 'bg-transparent text-olive border-olive/15 hover:bg-olive/80 border border-olive',
         outline: 'border-brown text-brown hover:bg-brown hover:text-cream',
         ghost: 'text-brown hover:bg-brown/10',

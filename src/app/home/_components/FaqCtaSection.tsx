@@ -1,10 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
-import { buttonVariants } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { SectionHeading } from '@/components/ui/section-heading';
-import { PHONE_DISPLAY, PHONE_TEL, ZALO_URL } from '@/config/constants';
+import { PHONE_DISPLAY, ZALO_URL } from '@/config/constants';
 import { useI18n } from '@/context/I18nContext';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/utils';
@@ -33,7 +34,7 @@ export function FaqCtaSection() {
           style={{ animationDelay: '150ms' }}
         >
           <Image
-            src="/images/banner.webp"
+            src="/images/faq.png"
             alt=""
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
@@ -42,21 +43,21 @@ export function FaqCtaSection() {
           {inView ? (
             <div className="animate-circuitFlow via-cream/25 pointer-events-none absolute top-0 h-full w-1/4 -skew-x-12 bg-gradient-to-r from-transparent to-transparent" />
           ) : null}
-          <div className="bg-brown/85 relative flex h-full flex-col justify-center gap-5 p-8 sm:p-10">
-            <h3 className="text-cream font-serif text-2xl font-semibold sm:text-3xl">
+          <div className="relative flex h-full flex-col justify-center gap-5 p-8 sm:p-10">
+            <h3 className="text-cream font-serif text-2xl font-semibold sm:w-[55%] sm:text-2xl">
               {t('faqCta.ctaTitle')}
             </h3>
-            <p className="text-cream/80 text-sm leading-relaxed">{t('faqCta.ctaSubtitle')}</p>
+            <p className="text-cream/80 text-sm leading-relaxed sm:w-[55%]">
+              {t('faqCta.ctaSubtitle')}
+            </p>
             <div className="flex flex-wrap gap-3">
-              <a href={ZALO_URL} className={buttonVariants({ variant: 'secondary' })}>
-                {t('common.bookViaZalo')}
-              </a>
-              <a
-                href={PHONE_TEL}
-                className="text-cream border-cream/50 hover:bg-cream/10 inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold transition-colors"
-              >
-                {t('common.callNow')}: {PHONE_DISPLAY}
-              </a>
+              <Link href={ZALO_URL}>
+                <Button className={'bg-black/50 hover:bg-black/80'}>
+                  {t('common.bookViaZalo')}
+                </Button>
+              </Link>
+
+              <Button variant={'cream'}>{PHONE_DISPLAY}</Button>
             </div>
           </div>
         </div>

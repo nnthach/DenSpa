@@ -5,9 +5,8 @@ export const SITE_TAGLINE = 'Gội đầu dưỡng sinh - Massage thư giản';
 export const PHONE_DISPLAY = '0905 650 414';
 export const PHONE_TEL = 'tel:0905650414';
 export const ZALO_URL = 'https://zalo.me/0905650414';
-export const MESSENGER_URL = '#';
-export const FACEBOOK_URL = '#';
-export const TIKTOK_URL = '#';
+export const MESSENGER_URL = 'https://www.facebook.com/duyen.tranmy.33865?locale=vi_VN';
+export const FACEBOOK_URL = 'https://www.facebook.com/duyen.tranmy.33865?locale=vi_VN';
 
 export const ADDRESS = 'Hồng An Apartment, Huỳnh Lâm, Ngũ Hành Sơn, Đà Nẵng';
 export const WORKING_HOURS = [
@@ -18,7 +17,6 @@ export const WORKING_HOURS = [
 export const NAV_LINKS = [
   { id: 'home', href: '#trang-chu' },
   { id: 'services', href: '#dich-vu' },
-  { id: 'pricing', href: '#dich-vu' },
   { id: 'reviews', href: '#review' },
   { id: 'about', href: '#ve-chung-toi' },
   { id: 'contact', href: '#lien-he' },

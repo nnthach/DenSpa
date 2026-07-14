@@ -23,7 +23,8 @@ export const translations = {
     },
     hero: {
       eyebrow: 'Gội đầu dưỡng sinh - Massage thư giản',
-      subtitle: 'Một không gian riêng tư, nơi bạn có thể dành một giờ để chăm sóc chính mình.',
+      subtitle:
+        'Một không gian riêng tư và yên bình, nơi bạn có thể tạm gác lại những bộn bề thường nhật, thư giãn cơ thể, tái tạo năng lượng và tận hưởng những phút giây chăm sóc trọn vẹn dành riêng cho chính mình.',
       trustBadges: {
         singleGuest: { title: 'Chỉ 1 khách/lần', desc: 'Riêng tư tuyệt đối' },
         structuredTherapy: { title: 'Liệu trình bài bản', desc: 'Kỹ thuật chuyên sâu' },
@@ -63,36 +64,6 @@ export const translations = {
         herbal: { title: 'Thảo mộc tự nhiên', desc: 'An toàn, lành tính, thân thiện với da' },
       },
       quote: 'Đến Den Spa, không chỉ để thư giãn, mà để cơ thể được lắng nghe và phục hồi.',
-    },
-    services: {
-      eyebrow: 'Bảng giá',
-      title: 'Dịch vụ nổi bật',
-      items: {
-        neckTherapy: {
-          title: 'Trị liệu cổ vai gáy',
-          duration: '60 phút',
-          price: '199K',
-          desc: 'Giảm đau, giảm căng cứng, phục hồi vận động, thư giãn tối đa.',
-        },
-        hairWash: {
-          title: 'Gội đầu dưỡng sinh',
-          duration: '60 phút',
-          price: 'Từ 89K',
-          desc: 'Khai thông kinh lạc, thư giãn đầu, chăm sóc tóc và da đầu khỏe mạnh.',
-        },
-        heelScrub: {
-          title: 'Chà gót chân',
-          duration: '45 phút',
-          price: 'Từ 89K',
-          desc: 'Da mềm mịn, loại bỏ da chết, gót chân sạch đẹp, không nứt nẻ.',
-        },
-        massage: {
-          title: 'Massage thư giãn',
-          duration: '60 phút',
-          price: '199K',
-          desc: 'Giảm đau nhức toàn thân, thả lỏng cơ bắp, tái tạo năng lượng.',
-        },
-      },
     },
     process: {
       title: 'Quy trình trị liệu chuyên nghiệp',
@@ -154,28 +125,6 @@ export const translations = {
       ctaTitle: 'Bạn xứng đáng có một giờ để nghỉ ngơi',
       ctaSubtitle: 'Đặt lịch ngay hôm nay để cơ thể được chăm sóc và tâm trí được thư giãn.',
     },
-    faq: [
-      {
-        question: 'Den Spa có cần đặt lịch trước không?',
-        answer:
-          'Có. Vì mỗi lần chỉ phục vụ 1 khách nên bạn nên đặt lịch trước qua Zalo hoặc gọi điện để được giữ khung giờ phù hợp.',
-      },
-      {
-        question: 'Den Spa có phục vụ nam không?',
-        answer:
-          'Có. Den Spa phục vụ cả khách nam và nữ với các liệu trình phù hợp cho từng nhu cầu.',
-      },
-      {
-        question: 'Trị liệu có đau không?',
-        answer:
-          'Kỹ thuật viên sẽ điều chỉnh lực tay theo cảm nhận của bạn trong suốt buổi trị liệu, đảm bảo thoải mái và hiệu quả.',
-      },
-      {
-        question: 'Tôi có thể hủy hoặc đổi lịch không?',
-        answer:
-          'Bạn có thể chủ động báo trước ít nhất 2 giờ qua Zalo hoặc gọi điện để đổi hoặc hủy lịch hẹn.',
-      },
-    ],
     footer: {
       contactInfoTitle: 'Thông tin liên hệ',
       bookingLabel: 'Zalo / Gọi ngay',
@@ -211,7 +160,8 @@ export const translations = {
     },
     hero: {
       eyebrow: 'Therapeutic Hair Wash - Relaxing Massage',
-      subtitle: 'A private space where you can spend an hour taking care of yourself.',
+      subtitle:
+        'Escape the rush of everyday life and immerse yourself in a private, tranquil space where every treatment is designed to relax your body, restore your energy, and nurture your well-being.',
       trustBadges: {
         singleGuest: { title: '1 guest at a time', desc: 'Absolute privacy' },
         structuredTherapy: { title: 'Structured treatments', desc: 'In-depth techniques' },
@@ -249,36 +199,6 @@ export const translations = {
       },
       quote:
         'At Den Spa, it’s not just about relaxing — it’s about letting your body be heard and restored.',
-    },
-    services: {
-      eyebrow: 'Pricing',
-      title: 'Featured services',
-      items: {
-        neckTherapy: {
-          title: 'Neck & shoulder therapy',
-          duration: '60 minutes',
-          price: '199K',
-          desc: 'Relieves pain and stiffness, restores mobility, deep relaxation.',
-        },
-        hairWash: {
-          title: 'Therapeutic hair wash',
-          duration: '60 minutes',
-          price: 'From 89K',
-          desc: 'Clears energy pathways, relaxes the scalp, keeps hair and scalp healthy.',
-        },
-        heelScrub: {
-          title: 'Heel scrub',
-          duration: '45 minutes',
-          price: 'From 89K',
-          desc: 'Softens skin, removes dead skin, clean heels with no cracking.',
-        },
-        massage: {
-          title: 'Relaxing massage',
-          duration: '60 minutes',
-          price: '199K',
-          desc: 'Relieves full-body aches, loosens muscles, restores energy.',
-        },
-      },
     },
     process: {
       title: 'A professional treatment process',
@@ -340,28 +260,6 @@ export const translations = {
       ctaTitle: 'You deserve an hour to unwind',
       ctaSubtitle: 'Book today so your body gets cared for and your mind gets to relax.',
     },
-    faq: [
-      {
-        question: 'Do I need to book in advance at Den Spa?',
-        answer:
-          'Yes. Since we serve only one guest at a time, please book in advance via Zalo or by phone to secure your preferred time slot.',
-      },
-      {
-        question: 'Does Den Spa serve male guests?',
-        answer:
-          'Yes. Den Spa serves both male and female guests with treatments suited to their needs.',
-      },
-      {
-        question: 'Is the treatment painful?',
-        answer:
-          'Our therapists adjust pressure based on your feedback throughout the session, ensuring comfort and effectiveness.',
-      },
-      {
-        question: 'Can I cancel or reschedule my appointment?',
-        answer:
-          'You can let us know at least 2 hours in advance via Zalo or by phone to reschedule or cancel your appointment.',
-      },
-    ],
     footer: {
       contactInfoTitle: 'Contact information',
       bookingLabel: 'Zalo / Call now',
