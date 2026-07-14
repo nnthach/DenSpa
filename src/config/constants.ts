@@ -1,6 +1,6 @@
 // Hằng số dùng chung toàn app. Không hardcode rải rác trong code.
 export const SITE_NAME = 'Den Spa';
-export const SITE_TAGLINE = 'Thư giãn – Chăm sóc – Phục hồi';
+export const SITE_TAGLINE = 'Gội đầu dưỡng sinh - Massage thư giản';
 
 export const PHONE_DISPLAY = '0905 650 414';
 export const PHONE_TEL = 'tel:0905650414';

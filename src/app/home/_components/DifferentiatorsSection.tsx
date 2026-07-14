@@ -12,7 +12,7 @@ const FEATURES = [
 
 export function DifferentiatorsSection() {
   return (
-    <section id="ve-chung-toi" className="bg-olive/5 py-16">
+    <section id="ve-chung-toi" className="py-16">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-lg">
           <Image
