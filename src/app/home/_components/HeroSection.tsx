@@ -2,6 +2,7 @@
 
 import { Leaf, Sparkles, Users } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { useI18n } from '@/context/I18nContext';
@@ -22,7 +23,7 @@ export function HeroSection() {
 
         <div className="animate-imageFade relative h-full w-full lg:col-span-6">
           <Image
-            src="/images/banner.webp"
+            src="/images/banner1.jpg"
             alt="Trị liệu thư giãn tại Den Spa"
             fill
             priority
@@ -47,7 +48,7 @@ export function HeroSection() {
               DEN SPA
             </h1>
             <p
-              className="text-brown/70 animate-fadeInUp mt-5 max-w-md text-base leading-relaxed"
+              className="text-olive animate-fadeInUp mt-5 max-w-md text-base leading-relaxed"
               style={{ animationDelay: '300ms' }}
             >
               {t('hero.subtitle')}
@@ -57,10 +58,14 @@ export function HeroSection() {
               className="animate-fadeInUp mt-8 flex flex-wrap gap-4"
               style={{ animationDelay: '450ms' }}
             >
-              <Button>{t('common.bookNow')}</Button>
-              <Button variant="cream" className="hover:bg-[#f8eee3]">
-                {t('common.viewServices')}
-              </Button>
+              <Link href={'#lien-he'}>
+                <Button>{t('common.bookNow')}</Button>
+              </Link>
+              <Link href={'#dich-vu'}>
+                <Button variant="cream" className="hover:bg-[#f8eee3]">
+                  {t('common.viewServices')}
+                </Button>
+              </Link>
             </div>
 
             <dl className="mt-12 flex flex-col gap-8 sm:flex-row">
