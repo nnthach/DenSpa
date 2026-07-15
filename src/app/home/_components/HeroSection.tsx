@@ -1,6 +1,6 @@
 'use client';
 
-import { Leaf, Sparkles, Users } from 'lucide-react';
+import { ArrowRight, CalendarCheck, Leaf, Sparkles, Users } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,37 +18,36 @@ export function HeroSection() {
 
   return (
     <section id="trang-chu" className="relative h-screen w-full overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 h-full w-full lg:grid lg:grid-cols-10">
-        <div className="bg-cream hidden h-full lg:col-span-4 lg:block" />
-
-        <div className="animate-imageFade relative h-full w-full lg:col-span-6">
-          <Image
-            src="/images/banner1.jpg"
-            alt="Trị liệu thư giãn tại Den Spa"
-            fill
-            priority
-            sizes="(min-width: 1024px) 60vw, 100vw"
-            className="object-cover"
-          />
-          <div className="from-cream via-cream/70 to-cream/90 absolute inset-0 h-full w-full bg-gradient-to-b lg:hidden" />
-          <div className="from-cream via-cream/50 absolute inset-0 hidden h-full w-[40%] bg-gradient-to-r to-transparent lg:block" />
-        </div>
+      <div className="animate-imageFade absolute inset-0 h-full w-full">
+        <Image
+          src="/images/banner_new.png"
+          alt="Trị liệu thư giãn tại Den Spa"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="from-cream via-cream/50 to-cream/10 absolute inset-0 h-full w-full bg-linear-to-r" />
       </div>
 
       <div className="relative z-10 flex h-full w-full items-center">
         <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-8">
-          <div className="">
-            <p className="text-olive animate-fadeInUp font-serif text-lg italic">
+          <div className="pt-6">
+            <p className="text-olive animate-fadeInUp font-handwriting text-2xl">
               {t('hero.eyebrow')}
             </p>
             <h1
-              className="text-brown animate-fadeInUp mt-2 font-serif text-5xl font-bold tracking-wide sm:text-6xl md:text-7xl"
-              style={{ animationDelay: '150ms' }}
+              className="animate-fadeInUp mt-2 bg-gradient-to-b from-[#66623d] via-[#8B5E3C] to-[#4A2E1B] bg-clip-text font-serif text-5xl font-extrabold tracking-normal text-transparent select-none sm:text-6xl md:text-8xl"
+              style={{
+                animationDelay: '150ms',
+                filter: 'drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.25))',
+                WebkitTextStroke: '0.3px rgba(255, 255, 255, 0.1)',
+              }}
             >
               DEN SPA
             </h1>
             <p
-              className="text-olive animate-fadeInUp mt-5 max-w-md text-base leading-relaxed"
+              className="text-olive animate-fadeInUp mt-5 max-w-md text-sm"
               style={{ animationDelay: '300ms' }}
             >
               {t('hero.subtitle')}
@@ -59,31 +58,32 @@ export function HeroSection() {
               style={{ animationDelay: '450ms' }}
             >
               <Link href={'#lien-he'}>
-                <Button>{t('common.bookNow')}</Button>
+                <Button className={'bg-brown/80'}>
+                  <CalendarCheck />
+                  {t('common.bookNow')}
+                </Button>
               </Link>
               <Link href={'#dich-vu'}>
                 <Button variant="cream" className="hover:bg-[#f8eee3]">
                   {t('common.viewServices')}
+                  <ArrowRight className="transition-transform duration-200 group-hover/button:translate-x-1" />
                 </Button>
               </Link>
             </div>
 
-            <dl className="mt-12 flex flex-col gap-8 sm:flex-row">
+            <dl className="mt-14 flex flex-col gap-16 sm:flex-row sm:flex-wrap">
               {TRUST_BADGES.map(({ id, Icon }, index) => (
                 <div
                   key={id}
-                  className="animate-fadeInUp flex items-center gap-3"
+                  className="animate-fadeInUp flex flex-col gap-4"
                   style={{ animationDelay: `${600 + index * 120}ms` }}
                 >
-                  <div className="border-brown flex h-10 w-10 shrink-0 items-center justify-center rounded-full border">
-                    <Icon className="text-brown mt-0.5 h-6 w-6 shrink-0" strokeWidth={1.5} />
-                  </div>
-
+                  <Icon className="text-brown h-7 w-7 shrink-0" strokeWidth={1.5} />
                   <div>
-                    <dt className="text-brown text-sm font-semibold whitespace-nowrap">
+                    <dt className="text-brown text-sm font-semibold tracking-wide uppercase">
                       {t(`hero.trustBadges.${id}.title`)}
                     </dt>
-                    <dd className="mt-0.5 text-xs text-black">
+                    <dd className="text-olive mt-1.5 text-sm leading-relaxed">
                       {t(`hero.trustBadges.${id}.desc`)}
                     </dd>
                   </div>
