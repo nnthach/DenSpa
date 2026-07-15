@@ -35,7 +35,7 @@ export function FaqCtaSection() {
         >
           <Image
             src="/images/faq.png"
-            alt=""
+            alt="Không gian thư giãn tại Den Spa"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"
