@@ -21,7 +21,7 @@ export function ProcessSection() {
   const { ref, inView } = useInView<HTMLElement>();
 
   return (
-    <section ref={ref} className="bg-olive/5 py-16">
+    <section ref={ref} className="bg-olive/5 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title={t('process.title')}
