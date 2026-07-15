@@ -33,6 +33,7 @@ export const translations = {
     },
     problems: {
       title: 'Bạn có đang',
+      eyebrow: 'Lắng nghe cơ thể bạn',
       items: {
         neckPain: {
           title: 'Đau cổ vai gáy',
@@ -170,6 +171,7 @@ export const translations = {
     },
     problems: {
       title: 'Are you experiencing',
+      eyebrow: 'Listen to Your Body',
       items: {
         neckPain: {
           title: 'Neck & shoulder pain',

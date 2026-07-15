@@ -24,12 +24,7 @@ export function SectionHeading({
       <h2 className="text-brown font-serif text-2xl font-semibold tracking-wide uppercase sm:text-3xl">
         {title}
       </h2>
-      <div
-        className={cn(
-          'bg-olive/40 mt-3 h-px w-16',
-          align === 'center' ? 'mx-auto' : 'mx-0',
-        )}
-      />
+      <div className={cn('bg-olive/40 mt-3 h-px w-24', align === 'center' ? 'mx-auto' : 'mx-0')} />
     </div>
   );
 }

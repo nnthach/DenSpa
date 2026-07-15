@@ -4,7 +4,7 @@ import { env } from '@/config/env';
 import { I18nProvider } from '@/context/I18nContext';
 import { cn } from '@/lib/utils';
 
-import { beVietnamPro, playfair } from './fonts';
+import { beVietnamPro, handwriting, playfair } from './fonts';
 
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
@@ -65,10 +65,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         'scroll-smooth',
         playfair.variable,
         beVietnamPro.variable,
+        handwriting.variable,
         'font-sans',
       )}
     >
-      <body className="bg-light-cream text-brown font-sans antialiased">
+      <body className="bg-light-cream text-brown antialiased">
         <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
