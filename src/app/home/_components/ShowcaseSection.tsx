@@ -12,7 +12,11 @@ export function ShowcaseSection() {
   const { ref, inView } = useInView<HTMLElement>();
 
   return (
-    <section ref={ref} id="review" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <section
+      ref={ref}
+      id="review"
+      className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-8"
+    >
       <SectionHeading
         eyebrow={t('showcase.eyebrow')}
         title={t('showcase.title')}

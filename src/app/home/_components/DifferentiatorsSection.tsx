@@ -20,7 +20,7 @@ export function DifferentiatorsSection() {
   const { ref, inView } = useInView<HTMLElement>();
 
   return (
-    <section ref={ref} id="ve-chung-toi" className="py-16">
+    <section ref={ref} id="ve-chung-toi" className="pt-16 sm:pt-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div
           className={cn(

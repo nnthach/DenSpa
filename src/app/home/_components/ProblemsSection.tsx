@@ -19,7 +19,7 @@ export function ProblemsSection() {
   const { ref, inView } = useInView<HTMLElement>();
 
   return (
-    <section ref={ref} className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <section ref={ref} className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       <SectionHeading
         title={t('problems.title')}
         eyebrow={t('problems.eyebrow')}
