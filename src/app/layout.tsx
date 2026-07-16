@@ -4,7 +4,7 @@ import { env } from '@/config/env';
 import { I18nProvider } from '@/context/I18nContext';
 import { cn } from '@/lib/utils';
 
-import { beVietnamPro, handwriting, playfair } from './fonts';
+import { beVietnamPro, cormorant, handwriting, playfair } from './fonts';
 
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
@@ -64,6 +64,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={cn(
         'scroll-smooth',
         playfair.variable,
+        cormorant.variable,
         beVietnamPro.variable,
         handwriting.variable,
         'font-sans',

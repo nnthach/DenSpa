@@ -25,7 +25,7 @@ export const translations = {
       eyebrow: 'Gội đầu dưỡng sinh - Massage thư giản',
       tagline: 'Chạm vào sự thư giãn đích thực',
       subtitle:
-        'Một không gian riêng tư và yên bình, nơi bạn có thể tạm gác lại những bộn bề thường nhật, thư giãn cơ thể, tái tạo năng lượng và tận hưởng những phút giây chăm sóc trọn vẹn dành riêng cho chính mình.',
+        'Nơi hơi thở bình yên bắt đầu, đánh thức mọi giác quan và nuôi dưỡng vẻ đẹp từ sâu bên trong.',
       exploreCta: 'Khám phá trải nghiệm',
       videoBadge: { title: 'Relax & Recharge', cta: 'Xem video giới thiệu' },
       stats: { value: '10+', title: 'Năm kinh nghiệm', desc: 'Trong lĩnh vực spa & trị liệu' },
@@ -168,7 +168,7 @@ export const translations = {
       eyebrow: 'Therapeutic Hair Wash - Relaxing Massage',
       tagline: 'Discover true relaxation',
       subtitle:
-        'Escape the rush of everyday life and immerse yourself in a private, tranquil space where every treatment is designed to relax your body, restore your energy, and nurture your well-being.',
+        'Where peaceful breathing begins, awakening every sense and nurturing beauty from deep within.',
       exploreCta: 'Explore the experience',
       videoBadge: { title: 'Relax & Recharge', cta: 'Watch the intro video' },
       stats: { value: '10+', title: 'Years of experience', desc: 'In the spa & therapy industry' },
