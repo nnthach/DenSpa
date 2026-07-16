@@ -23,12 +23,17 @@ export const translations = {
     },
     hero: {
       eyebrow: 'Gội đầu dưỡng sinh - Massage thư giản',
+      tagline: 'Chạm vào sự thư giãn đích thực',
       subtitle:
         'Một không gian riêng tư và yên bình, nơi bạn có thể tạm gác lại những bộn bề thường nhật, thư giãn cơ thể, tái tạo năng lượng và tận hưởng những phút giây chăm sóc trọn vẹn dành riêng cho chính mình.',
+      exploreCta: 'Khám phá trải nghiệm',
+      videoBadge: { title: 'Relax & Recharge', cta: 'Xem video giới thiệu' },
+      stats: { value: '10+', title: 'Năm kinh nghiệm', desc: 'Trong lĩnh vực spa & trị liệu' },
       trustBadges: {
         singleGuest: { title: 'Chỉ 1 khách/lần', desc: 'Riêng tư tuyệt đối' },
         structuredTherapy: { title: 'Liệu trình bài bản', desc: 'Kỹ thuật chuyên sâu' },
         naturalHerbs: { title: 'Thảo mộc tự nhiên', desc: 'An toàn, lành tính' },
+        dedicatedTherapists: { title: 'Kỹ thuật tận tâm', desc: 'Được đào tạo chuyên nghiệp' },
       },
     },
     problems: {
@@ -161,12 +166,17 @@ export const translations = {
     },
     hero: {
       eyebrow: 'Therapeutic Hair Wash - Relaxing Massage',
+      tagline: 'Discover true relaxation',
       subtitle:
         'Escape the rush of everyday life and immerse yourself in a private, tranquil space where every treatment is designed to relax your body, restore your energy, and nurture your well-being.',
+      exploreCta: 'Explore the experience',
+      videoBadge: { title: 'Relax & Recharge', cta: 'Watch the intro video' },
+      stats: { value: '10+', title: 'Years of experience', desc: 'In the spa & therapy industry' },
       trustBadges: {
         singleGuest: { title: '1 guest at a time', desc: 'Absolute privacy' },
         structuredTherapy: { title: 'Structured treatments', desc: 'In-depth techniques' },
         naturalHerbs: { title: 'Natural herbs', desc: 'Safe and gentle' },
+        dedicatedTherapists: { title: 'Dedicated therapists', desc: 'Professionally trained' },
       },
     },
     problems: {

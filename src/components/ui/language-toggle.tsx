@@ -20,7 +20,7 @@ export default function LanguageToggle({ isScrolled }: { isScrolled?: boolean })
         'group flex h-8 cursor-pointer items-center gap-1 rounded-full border px-2 text-xs font-medium tracking-wide uppercase transition-colors sm:h-auto sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-sm',
         isScrolled
           ? 'hover:border-primary hover:text-primary border-brown text-brown'
-          : 'border-white/30 text-white/90 hover:border-white hover:text-white',
+          : 'hover:border-primary hover:text-primary border-brown text-brown',
       )}
     >
       <Globe className="size-3.5 transition-transform duration-500 group-hover:rotate-180 sm:size-4" />
