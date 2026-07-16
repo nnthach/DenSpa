@@ -31,7 +31,7 @@ export function ProcessSection() {
         <div className="relative mt-12 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
           <div
             className={cn(
-              'bg-olive/20 absolute top-6 right-0 left-0 hidden h-px lg:block',
+              'bg-olive/20 absolute top-8 right-0 left-0 hidden h-px lg:block',
               inView ? 'animate-growLine' : 'scale-x-0',
             )}
           />
