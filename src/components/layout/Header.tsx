@@ -80,7 +80,7 @@ export default function Header() {
               key={link.id}
               href={link.href}
               className={cn(
-                'text-xs font-semibold tracking-widest uppercase transition-colors',
+                'font-serif text-xs font-semibold tracking-widest uppercase transition-colors',
                 isScrolled ? 'text-brown/80 hover:text-brown' : 'text-white/90 hover:text-white',
               )}
             >
