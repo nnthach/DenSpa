@@ -57,14 +57,16 @@ export default function Header() {
           <span className="leading-tight">
             <span
               className={cn(
-                'text-brown block font-serif text-lg font-semibold tracking-wide transition-colors',
+                'block font-serif text-lg font-semibold tracking-wide transition-colors',
+                isScrolled ? 'text-brown' : 'text-gold',
               )}
             >
               {SITE_NAME.toUpperCase()}
             </span>
             <span
               className={cn(
-                'text-olive block text-[10px] font-medium tracking-[0.2em] uppercase transition-colors',
+                'block text-[10px] font-medium tracking-[0.2em] uppercase transition-colors',
+                isScrolled ? 'text-olive' : 'text-white',
               )}
             >
               {t('header.tagline')}
@@ -79,7 +81,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                 'text-xs font-semibold tracking-widest uppercase transition-colors',
-                isScrolled ? 'text-brown/80 hover:text-brown' : 'text-black/90 hover:text-black',
+                isScrolled ? 'text-brown/80 hover:text-brown' : 'text-white/90 hover:text-white',
               )}
             >
               {t(`nav.${link.id}`)}
@@ -89,20 +91,28 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageToggle isScrolled={isScrolled} />
-          <Button size={'sm'}>
+          <Button
+            size={'sm'}
+            className={cn(
+              isScrolled
+                ? ''
+                : 'border-gold/70 text-cream/70 hover:border-gold hover:text-cream border bg-transparent hover:bg-transparent',
+            )}
+          >
             <Phone className="h-4 w-4" />
             {PHONE_DISPLAY}
           </Button>
         </div>
 
         <div className="flex items-center lg:hidden">
-          <LanguageToggle isScrolled />
+          <LanguageToggle isScrolled={isScrolled} />
 
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger
               aria-label={t('header.openMenu')}
               className={cn(
-                'text-brown hover:bg-brown/10 flex h-11 w-11 items-center justify-center rounded-lg transition-colors',
+                'hover:bg-brown/10 flex h-11 w-11 items-center justify-center rounded-lg transition-colors',
+                isScrolled ? 'text-brown' : 'text-cream',
               )}
             >
               <Menu className="h-6 w-6" />

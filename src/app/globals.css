@@ -6,6 +6,7 @@
 
 @theme {
   --font-serif: var(--font-playfair), Georgia, serif;
+  --font-cormorant: var(--font-cormorant-garamond), Georgia, serif;
   --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
   --font-handwriting: var(--font-handwriting), cursive;
 
@@ -13,6 +14,7 @@
   --color-olive: #66623d;
   --color-cream: #faf4ea;
   --color-light-cream: #fefbf7;
+  --color-gold: #c9a876;
 }
 
 @theme inline {
