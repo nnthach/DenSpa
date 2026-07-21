@@ -71,6 +71,20 @@ export const translations = {
       },
       quote: 'Đến Den Spa, không chỉ để thư giãn, mà để cơ thể được lắng nghe và phục hồi.',
     },
+    services: {
+      eyebrow: 'Bảng giá',
+      title: 'Dịch vụ nổi bật',
+      signsTitle: 'Dấu hiệu bạn nên trải nghiệm',
+      stepsTitle: 'Quy trình thực hiện',
+    },
+    alaCarte: {
+      eyebrow: 'Dịch vụ thêm',
+      title: 'Dịch vụ lẻ',
+    },
+    combos: {
+      eyebrow: 'Ưu đãi trọn gói',
+      title: 'Combo dịch vụ',
+    },
     process: {
       title: 'Quy trình trị liệu chuyên nghiệp',
       steps: {
@@ -211,6 +225,20 @@ export const translations = {
       },
       quote:
         'At Den Spa, it’s not just about relaxing — it’s about letting your body be heard and restored.',
+    },
+    services: {
+      eyebrow: 'Pricing',
+      title: 'Featured services',
+      signsTitle: 'Signs you should try this',
+      stepsTitle: 'Treatment process',
+    },
+    alaCarte: {
+      eyebrow: 'Add-on',
+      title: 'À la carte services',
+    },
+    combos: {
+      eyebrow: 'Package deals',
+      title: 'Service combos',
     },
     process: {
       title: 'A professional treatment process',

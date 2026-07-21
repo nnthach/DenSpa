@@ -1,3 +1,5 @@
+import { AlaCarteSection } from '@/app/home/_components/AlaCarteSection';
+import { CombosSection } from '@/app/home/_components/CombosSection';
 import { DifferentiatorsSection } from '@/app/home/_components/DifferentiatorsSection';
 import { FaqCtaSection } from '@/app/home/_components/FaqCtaSection';
 import { HeroSection } from '@/app/home/_components/HeroSection';
@@ -18,6 +20,8 @@ export default function HomePage() {
         <ProblemsSection />
         <DifferentiatorsSection />
         <ServicesSection />
+        <CombosSection />
+        <AlaCarteSection />
         <ProcessSection />
         <ShowcaseSection />
         <FaqCtaSection />
