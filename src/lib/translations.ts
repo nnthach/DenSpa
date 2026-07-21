@@ -85,6 +85,12 @@ export const translations = {
       eyebrow: 'Ưu đãi trọn gói',
       title: 'Combo dịch vụ',
     },
+    shampoos: {
+      eyebrow: 'Sản phẩm chăm sóc tóc',
+      title: 'Dầu gội dưỡng sinh Den Spa',
+      shampooLabel: 'Gội',
+      conditionerLabel: 'Xả',
+    },
     process: {
       title: 'Quy trình trị liệu chuyên nghiệp',
       steps: {
@@ -239,6 +245,12 @@ export const translations = {
     combos: {
       eyebrow: 'Package deals',
       title: 'Service combos',
+    },
+    shampoos: {
+      eyebrow: 'Hair care products',
+      title: 'Den Spa Therapeutic Shampoo',
+      shampooLabel: 'Shampoo',
+      conditionerLabel: 'Conditioner',
     },
     process: {
       title: 'A professional treatment process',

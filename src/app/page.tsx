@@ -6,6 +6,7 @@ import { HeroSection } from '@/app/home/_components/HeroSection';
 import { ProblemsSection } from '@/app/home/_components/ProblemsSection';
 import { ProcessSection } from '@/app/home/_components/ProcessSection';
 import { ServicesSection } from '@/app/home/_components/ServicesSection';
+import { ShampooSection } from '@/app/home/_components/ShampooSection';
 import { ShowcaseSection } from '@/app/home/_components/ShowcaseSection';
 import { FloatingContact } from '@/components/layout/FloatingContact';
 import Footer from '@/components/layout/Footer';
@@ -23,6 +24,7 @@ export default function HomePage() {
         <CombosSection />
         <AlaCarteSection />
         <ProcessSection />
+        <ShampooSection />
         <ShowcaseSection />
         <FaqCtaSection />
       </main>
