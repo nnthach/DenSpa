@@ -2,6 +2,7 @@
 
 import { CircleAlert, Clock } from 'lucide-react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -13,6 +14,16 @@ import {
 } from '@/components/ui/dialog';
 import { PHONE_DISPLAY } from '@/config/constants';
 import { useI18n } from '@/context/I18nContext';
+import { cn } from '@/lib/utils';
+
+export type ServiceOption = {
+  id: string;
+  label: string;
+  duration?: string;
+  price: string;
+  note?: string;
+  steps?: string[];
+};
 
 export type ServiceDetail = {
   id: string;
@@ -23,6 +34,7 @@ export type ServiceDetail = {
   desc: string;
   signs: string[];
   steps: string[];
+  options: ServiceOption[];
 };
 
 type ServiceDetailModalProps = {
@@ -39,6 +51,16 @@ export function ServiceDetailModal({
   stepsTitle,
 }: ServiceDetailModalProps) {
   const { t } = useI18n();
+  const [activeOptionIndex, setActiveOptionIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveOptionIndex(0);
+  }, [service?.id]);
+
+  const activeOption = service?.options[activeOptionIndex];
+  const duration = activeOption ? activeOption.duration : service?.duration;
+  const price = activeOption?.price ?? service?.price;
+  const steps = activeOption?.steps ?? service?.steps ?? [];
 
   return (
     <Dialog open={!!service} onOpenChange={onOpenChange}>
@@ -48,7 +70,7 @@ export function ServiceDetailModal({
       >
         {service ? (
           <>
-            <div className="relative aspect-16/9 w-full shrink-0">
+            <div className="relative aspect-video w-full shrink-0">
               <Image
                 src={service.image}
                 alt={service.title}
@@ -68,13 +90,41 @@ export function ServiceDetailModal({
                 </DialogDescription>
               </DialogHeader>
 
+              {service.options.length > 1 && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {service.options.map((option, index) => (
+                    <button
+                      key={option.id}
+                      type="button"
+                      onClick={() => setActiveOptionIndex(index)}
+                      className={cn(
+                        'rounded-full border px-4 py-1.5 text-xs font-semibold tracking-wide uppercase transition-colors',
+                        index === activeOptionIndex
+                          ? 'bg-olive border-olive text-cream'
+                          : 'border-olive/30 text-olive hover:bg-olive/10',
+                      )}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+
               <div className="border-olive/15 text-olive mt-4 flex items-center justify-between border-t border-b py-3 text-sm">
                 <span className="flex items-center gap-1.5">
-                  <Clock className="h-4 w-4" />
-                  {service.duration}
+                  {duration ? (
+                    <>
+                      <Clock className="h-4 w-4" />
+                      {duration}
+                    </>
+                  ) : null}
                 </span>
-                <span className="text-lg font-bold">{service.price}</span>
+                <span className="text-lg font-bold">{price}</span>
               </div>
+
+              {activeOption?.note ? (
+                <p className="text-olive/70 mt-2 text-xs italic">{activeOption.note}</p>
+              ) : null}
 
               <div className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
@@ -102,9 +152,9 @@ export function ServiceDetailModal({
                     {stepsTitle}
                   </h4>
                   <ol className="mt-3">
-                    {service.steps.map((step, index) => (
+                    {steps.map((step, index) => (
                       <li key={step} className="relative flex gap-3 pb-4 last:pb-0">
-                        {index < service.steps.length - 1 && (
+                        {index < steps.length - 1 && (
                           <span className="bg-olive/20 absolute top-6 bottom-0 left-2.75 w-px" />
                         )}
                         <span className="bg-olive text-cream relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold">

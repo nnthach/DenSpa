@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 import { useI18n } from '@/context/I18nContext';
 
-import { FAQ_DATA } from './faq-data';
+import { FAQ_DATA } from '../_data/faq-data';
 
 // Client leaf: chỉ phần accordion cần state mở/đóng câu hỏi.
 export function FaqAccordion() {

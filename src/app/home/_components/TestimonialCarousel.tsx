@@ -22,7 +22,6 @@ function getVisibleCount(width: number) {
   return 1;
 }
 
-// Client leaf: carousel review tự trượt — track dịch chuyển bằng transform, card giữa được phóng to.
 export function TestimonialCarousel() {
   const { t } = useI18n();
   const [visibleCount, setVisibleCount] = useState(3);
